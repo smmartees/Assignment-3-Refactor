@@ -10,7 +10,7 @@
 
 
 //C
-STUDENTNAME CreateStudentName(char* FirstName, char* MiddleName, char* LastName) {
+STUDENTNAME SetStudentName(char* FirstName, char* MiddleName, char* LastName) {
 	STUDENTNAME newStudentName;
 	
 	strncpy(newStudentName.firstName, FirstName, NAME_LENGTH);
@@ -31,7 +31,7 @@ STUDENT CreateStudent(int StudentNum, STUDENTNAME StudentName) {
 	newStudent.studentName.middleName = StudentName.middleName;
 	newStudent.studentName.lastName = StudentName.lastName;
 	*/
-	newStudent.studentName = CreateStudentName(StudentName.firstName, StudentName.middleName, StudentName.lastName);
+	newStudent.studentName = SetStudentName(StudentName.firstName, StudentName.middleName, StudentName.lastName);
 
 	return newStudent;
 }

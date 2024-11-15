@@ -51,28 +51,28 @@ int main(void) {
 	char firstName[] = "Jean-Luc";
 	char middleName[] = " ";
 	char lastName[] = "Picard";
-	STUDENTNAME name = CreateStudentName(firstName, middleName, lastName);
+	STUDENTNAME name = SetStudentName(firstName, middleName, lastName);
 	STUDENT student = CreateStudent(studentNumber, name);
 	
 	int studentNumber2 = 987654321;		//second student
 	char firstName2[] = "William";
 	char middleName2[] = "Thomas";
 	char lastName2[] = "Riker";
-	STUDENTNAME name2 = CreateStudentName(firstName2, middleName2, lastName2);
+	STUDENTNAME name2 = SetStudentName(firstName2, middleName2, lastName2);
 	STUDENT student2 = CreateStudent(studentNumber2, name2);
 
 	int studentNumber3 = 1010101010;	//third student
 	char firstName3[] = "Data";
 	char middleName3[] = "Lore";
 	char lastName3[] = "Soong";
-	STUDENTNAME name3 = CreateStudentName(firstName3, middleName3, lastName3);
+	STUDENTNAME name3 = SetStudentName(firstName3, middleName3, lastName3);
 	STUDENT student3 = CreateStudent(studentNumber3, name3);
 
 	int studentNumber4 = 132547698;		//fourth student
 	char firstName4[] = "Natasha";
 	char middleName4[] = " ";
 	char lastName4[] = "Yar";
-	STUDENTNAME name4 = CreateStudentName(firstName4, middleName4, lastName4);
+	STUDENTNAME name4 = SetStudentName(firstName4, middleName4, lastName4);
 	STUDENT student4 = CreateStudent(studentNumber4, name4);
 
 	STUDENT studentArray[4];

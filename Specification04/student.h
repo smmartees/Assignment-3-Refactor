@@ -4,14 +4,9 @@
 
 // Structure template of STUDENT
 
-//#define STUDENT_NUM_LENGTH	10
-#define NAME_LENGTH			40
+#include "studentName.h"
 
-typedef struct studentName {
-	char firstName[NAME_LENGTH];
-	char middleName[NAME_LENGTH];
-	char lastName[NAME_LENGTH];
-}STUDENTNAME;
+//#define STUDENT_NUM_LENGTH	10
 
 typedef struct student {
 	//int studentNumber[STUDENT_NUM_LENGTH];
@@ -20,7 +15,7 @@ typedef struct student {
 }STUDENT;
 
 //C
-STUDENTNAME CreateStudentName(char* FirstName, char* MiddleName, char* LastName);
+
 
 STUDENT CreateStudent(int StudentNum, STUDENTNAME StudentName);
 
@@ -29,6 +24,5 @@ STUDENT CreateStudent(int StudentNum, STUDENTNAME StudentName);
 //U
 
 //D
-void PrintStudentName(STUDENTNAME s);
 
 void PrintStudent(STUDENT s);
