@@ -6,4 +6,7 @@
 
 STUDENTNAME SetStudentName(char* FirstName, char* MiddleName, char* LastName);
 
-void GetStudentName(STUDENTNAME s);
+void GetStudentName(STUDENTNAME s) {
+	printf("%s%s%s\n", s.firstName, s.middleName, s.lastName);
+}
+
