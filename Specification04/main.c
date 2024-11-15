@@ -24,7 +24,7 @@
 //						Then use this function in your program to display your
 //						student records.
 
-// Feedback on Specification 4:
+//  Feedback on Specification 4:
 // Question 4: Structs of Student Records
 //o Specifications : 4.00 / 4.00 (The program works and meets all of the 
 //	specifications.)
