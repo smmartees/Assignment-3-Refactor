@@ -7,42 +7,52 @@
 #include "student.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 
 //C
 
 
-STUDENT CreateStudent(int StudentNum, STUDENTNAME StudentName) {
+PSTUDENT CreateStudent(int StudentNum, STUDENTNAME StudentName) {
 	
-	
-	STUDENT newStudent;
+	PSTUDENT newStudent = (PSTUDENT)malloc(sizeof(STUDENT));
+	if (!newStudent) {
+		fprintf(stderr, "error allocating memory\n");
+		exit(EXIT_FAILURE);
+	}
+	else {
+		newStudent->studentNumber = StudentNum;
+		newStudent->studentName = SetStudentName(StudentName.firstName, 
+			StudentName.middleName, StudentName.lastName);
+	}
 
-	newStudent.studentNumber = StudentNum;
-	//char name[] = strncpy("%s%s%s\n", StudentName.firstName, StudentName.middleName, StudentName.lastName);
-	/*
-	newStudent.studentName.firstName = StudentName.firstName;
-	newStudent.studentName.middleName = StudentName.middleName;
-	newStudent.studentName.lastName = StudentName.lastName;
-	*/
-	newStudent.studentName = SetStudentName(StudentName.firstName, StudentName.middleName, StudentName.lastName);
+	//newStudent.studentNumber = StudentNum;
+	////char name[] = strncpy("%s%s%s\n", StudentName.firstName, StudentName.middleName, StudentName.lastName);
+	///*
+	//newStudent.studentName.firstName = StudentName.firstName;
+	//newStudent.studentName.middleName = StudentName.middleName;
+	//newStudent.studentName.lastName = StudentName.lastName;
+	//*/
+	//newStudent.studentName = SetStudentName(StudentName.firstName, StudentName.middleName, StudentName.lastName);
+
 
 	return newStudent;
 }
 
 //R
-bool StudentArrayInitializer(STUDENT* studentArray, STUDENT firstStudent,
-	STUDENT secondStudent, STUDENT thirdStudent, STUDENT fourthStudent) {
+bool StudentArrayInitializer(PSTUDENT studentArray, PSTUDENT firstStudent,
+	PSTUDENT secondStudent, PSTUDENT thirdStudent, PSTUDENT fourthStudent) {
 
-	studentArray[0] = firstStudent;
-	studentArray[1] = secondStudent;
-	studentArray[2] = thirdStudent;
-	studentArray[3] = fourthStudent;
+	studentArray[0] = *firstStudent;
+	studentArray[1] = *secondStudent;
+	studentArray[2] = *thirdStudent;
+	studentArray[3] = *fourthStudent;
 
 }
 
 
 //R
-void PrintStudentArray(STUDENT* studentArray) {
+void PrintStudentArray(PSTUDENT studentArray) {
 
 	char middleInitial;		//container for middle initial
 	int studentNum;			//thought this would keep the printf formatting cleaner
@@ -73,5 +83,15 @@ void PrintStudentArray(STUDENT* studentArray) {
 
 void PrintStudent(STUDENT Student) {
 	printf("%d\n", Student.studentNumber);
-	printf("%s\n%s\n%s\n", Student.studentName.firstName, Student.studentName.middleName, Student.studentName.lastName);
+	printf("%s\n%s\n%s\n", Student.studentName.firstName, 
+		Student.studentName.middleName, Student.studentName.lastName);
+}
+
+void DestroyStudent(PSTUDENT* s) {
+	free(s);
+}
+
+void DestroyArray(PSTUDENT* studentArr) {	//Keep getting an out of bounds on the for loop..
+	/*for(int i = 0; i < STUDENT_ARRAY_SIZE; i++)
+		free(&studentArr[i]);*/
 }
