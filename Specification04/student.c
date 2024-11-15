@@ -10,18 +10,11 @@
 
 
 //C
-STUDENTNAME SetStudentName(char* FirstName, char* MiddleName, char* LastName) {
-	STUDENTNAME newStudentName;
-	
-	strncpy(newStudentName.firstName, FirstName, NAME_LENGTH);
-	strncpy(newStudentName.middleName, MiddleName, NAME_LENGTH);
-	strncpy(newStudentName.lastName, LastName, NAME_LENGTH);
-
-	return newStudentName;
-}
 
 
 STUDENT CreateStudent(int StudentNum, STUDENTNAME StudentName) {
+	
+	
 	STUDENT newStudent;
 
 	newStudent.studentNumber = StudentNum;

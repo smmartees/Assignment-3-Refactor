@@ -13,7 +13,7 @@ typedef struct student {
 	//int studentNumber[STUDENT_NUM_LENGTH];
 	int studentNumber;
 	STUDENTNAME studentName;
-}STUDENT;
+}STUDENT, *PSTUDENT;
 
 //C
 
