@@ -79,7 +79,10 @@ int main(void) {
 
 	PrintStudentArray(studentArray);
 
-	DestroyArray(studentArray);
+	DestroyStudent(student);
+	DestroyStudent(student2);
+	DestroyStudent(student3);
+	DestroyStudent(student4);
 
 	return 0;
 }

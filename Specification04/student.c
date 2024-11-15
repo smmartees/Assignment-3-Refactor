@@ -58,7 +58,7 @@ void PrintStudentArray(PSTUDENT studentArray) {
 	int studentNum;			//thought this would keep the printf formatting cleaner
 	STUDENT currentStudent;
 
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < STUDENT_ARRAY_SIZE; i++) {
 		currentStudent = studentArray[i];
 		studentNum = currentStudent.studentNumber;
 		middleInitial = currentStudent.studentName.middleName[0];
@@ -92,6 +92,9 @@ void DestroyStudent(PSTUDENT* s) {
 }
 
 void DestroyArray(PSTUDENT* studentArr) {	//Keep getting an out of bounds on the for loop..
-	/*for(int i = 0; i < STUDENT_ARRAY_SIZE; i++)
-		free(&studentArr[i]);*/
+	/*PSTUDENT tmp = NULL;
+	for (int i = 0; i < STUDENT_ARRAY_SIZE; i++) {
+		tmp = studentArr[i];
+		free(tmp);
+	}	*/
 }
